@@ -61,10 +61,10 @@
             "version": "1.0",
             "type": "docker",
             "status": "running",
-            "restartPolicy": "never",
+            "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.ovdlstreamer}",
-              "createOptions": "{\"HostConfig\":{\"Binds\":[\"/tmp/.X11-unix:/tmp/.X11-unix\",\"/dev:/dev\"],\"NetworkMode\":\"host\",\"IpcMode\":\"host\",\"Privileged\":true},\"Entrypoint\":[\"/tail\",\"/-f\",\"/dev/null\"], \"NetworkingConfig\":{\"EndpointsConfig\":{\"host\":{}}},\"Env\":[\"DISPLAY=:0\"]}"
+              "createOptions": "{\"HostConfig\":{\"Binds\":[\"/tmp/.X11-unix:/tmp/.X11-unix\",\"/dev:/dev\"],\"NetworkMode\":\"host\",\"IpcMode\":\"host\",\"Privileged\":true}, \"NetworkingConfig\":{\"EndpointsConfig\":{\"host\":{}}},\"Env\":[\"DISPLAY=:0\"]}"
             }
           }
         }
