@@ -1,4 +1,11 @@
 FROM openvino/ubuntu18_data_dev
 
-CMD tail -f /dev/null
+USER root
+
+ENV MODELS_PATH=/opt/intel/openvino/deployment_tools/open_model_zoo/models
+ENV PYTHONPATH=/opt/intel/openvino/data_processing/dl_streamer/python/gstgva:$PYTHONPATH
+
+COPY video_samples video_samples/
+
+CMD [ "tail", "-f" , "/dev/null" ]
 
